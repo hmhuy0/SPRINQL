@@ -139,11 +139,13 @@ def update_critic(self, add_batches, step):
                 ((current_Q2 - reward)**2 + y_next_V**2 
                  + 2*(reward - current_Q2) * y_next_V).mean() 
                 )/2
+    
+    max_coef = max(args.agent.rr_coef,1)
     Q_loss = (
-        value_loss 
+        value_loss * max_coef
         + DM_loss
         + args.agent.rr_coef * RR_loss
-    )
+    )/max_coef
     
     num_random = args.agent.num_random
     if (self.first_log):
