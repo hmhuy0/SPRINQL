@@ -1,0 +1,23 @@
+# @package _global_
+
+env:
+  name: Hopper-v3
+  sub_optimal_demo: []
+  num_sub_optimal_demo: []
+
+  eps_steps: 100000
+  learn_steps: 1e6
+  eval_interval: 1e4
+
+agent:
+  name: sac
+  init_temp: 1e-1
+
+train:
+  use_target: true
+  soft_update: true
+  batch: 256
+  KL_start: 5e5
+
+q_net:
+  _target_: Sources.algos.critic.SingleQCritic

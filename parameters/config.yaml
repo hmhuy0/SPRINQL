@@ -1,0 +1,35 @@
+exp_name: ''
+
+cuda_deterministic: True
+device: ???
+
+gamma: 0.99
+seed: 0
+
+train:
+  batch: 32
+  use_target: False
+  soft_update: False
+  reward_lower_bound: 0.1
+  reward_scale: 2.0
+  use_reward_function: True
+
+expert:
+  reward_arr: [0.4,0.7,1.0]
+
+eval:
+  eps: 10
+
+env:
+  learn_steps: 1e6
+  eval_interval: 1e4
+
+method:
+  loss: v0
+  alpha: 0.5
+
+hydra_base_dir: ""
+
+defaults:
+  - agent: sac
+  - env: cheetah
