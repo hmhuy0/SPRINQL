@@ -1,6 +1,8 @@
 <h1>SPRINQL: Sub-optimal Demonstrations driven Offline Imitation Learning</h1>
 
 ## Introduction
+Source code of Paper [SPRINQL](https://openreview.net/forum?id=uDD44NROOt), accepted at NeurIPS2024.
+
 We focus on offline imitation learning (IL), which aims to mimic the expert’s behavior from its demonstration without any interactions with the environment. One of the main challenges in offline IL is dealing with the limited support of expert demonstrations that cover only a small fraction of the state-action spaces.  While it is not feasible to obtain many expert demonstrations, it is always feasible to get a larger set of sub-optimal demonstrations. In this paper, we provide an offline IL approach that is able to exploit the larger set of sub-optimal demonstrations while imitating the expert trajectories. Existing offline IL approaches based on behavior cloning or distribution matching often suffer from either over fitting to the small set of expert demonstrations or imitating sub-optimal trajectories in the larger set.  To that end, our approach based on inverse soft-Q learning learns from both expert and sub-optimal demonstrations, but it gives more importance (through learned weights) to alignment with expert demonstrations and less importance to alignment with sub-optimal demonstrations. A key contribution of our approach, referred to as SPRINQL, is converting the offline IL problem to a convex optimization over the space of Q functions. Through a thorough experimental evaluation, we are able to show that SPRINQL algorithm achieves SOTA performance on offline IL benchmarks.
 
 1. Clone the repos:
@@ -91,5 +93,9 @@ We have demonstrated that our algorithm possesses several favorable properties, 
 ## Citation
 
 ```
-.
+@inproceedings{hoangsprinql,
+  title={SPRINQL: Sub-optimal Demonstrations driven Offline Imitation Learning},
+  author={Hoang, Huy and Mai, Tien Anh and Varakantham, Pradeep},
+  booktitle={The Thirty-eighth Annual Conference on Neural Information Processing Systems}
+}
 ```
